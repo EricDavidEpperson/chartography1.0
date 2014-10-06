@@ -1,0 +1,57 @@
+<% if params[:performer].present? %>
+  <% if @concert.results.none? %>
+    <div data-alert class="alert-box alert" style="margin-bottom:0px;">
+      Sorry no events found, pls try again.<a href="#" class="close">&times;</a>
+    </div>
+  <% else %>
+    <div data-alert class="alert-box success" style="margin-bottom:0px;">
+      Please choose a concert to get a link to its event.<a href="#" class="close">&times;</a>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="large-9 small-12 columns" id="map-canvas">
+  <% if @concert.results.any? %>
+    <script>
+      $(window).ready(function(){
+        var LocationData = [
+          <% @concert.results.each do |result| %>
+            ['<%= link_to result.display_name, result.uri %>',
+            <%= result.location.lat %>,
+            <%= result.location.lng %>
+            ],
+          <% end %>
+        ];
+        function initialize()
+        {
+            var map =
+                new google.maps.Map(document.getElementById('map-canvas'));
+            var bounds = new google.maps.LatLngBounds();
+            var infowindow = new google.maps.InfoWindow();
+
+            for (var i in LocationData)
+            {
+                var p = LocationData[i];
+                var latlng = new google.maps.LatLng(p[1], p[2]);
+                bounds.extend(latlng);
+
+                var marker = new google.maps.Marker({
+                    position: latlng,
+                    map: map,
+                    title: p[0]
+                });
+
+                google.maps.event.addListener(marker, 'click', function() {
+                    infowindow.setContent(this.title);
+                    infowindow.open(map, this);
+                });
+            }
+
+            map.fitBounds(bounds);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+      });
+    </script>
+<% end %>
+</div>

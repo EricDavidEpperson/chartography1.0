@@ -1,0 +1,5 @@
+<%# add navigation links to this file %>
+<%= form_tag root_path, method: 'get' do %>
+    <li class="left"><%= text_field_tag :performer, params[:performer], placeholder: 'Artist or Band Name...' %></li>
+    <li class="left"><%= image_submit_tag("") %></li>
+<% end %>
