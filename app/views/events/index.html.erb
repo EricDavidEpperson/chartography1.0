@@ -1,6 +1,13 @@
+<head>
+  <style>
+    body .gm-style img {max-width:none;}
+    body header .top- li#rock_and_roll {margin-left:5px}
+  </style>
+</head>
+
 <% if params[:performer].present? %>
   <% if @concert.results.none? %>
-    <div data-alert class="alert-box alert" style="margin-bottom:0px;">
+    <div data-alert class="alert-box alert" style="margin-bottom:0;">
       Sorry no events found, pls try again.<a href="#" class="close">&times;</a>
     </div>
   <% else %>
@@ -10,7 +17,7 @@
   <% end %>
 <% end %>
 
-<div class="large-9 small-12 columns" id="map-canvas">
+<div class="large-10 small-12 columns" id="map-canvas">
   <% if @concert.results.any? %>
     <script>
       $(window).ready(function(){
