@@ -1,6 +1,6 @@
 <%# add navigation links to this file %>
 <%= form_tag root_path, method: 'get' do %>
     <li class="left"><%= text_field_tag :performer, params[:performer], placeholder: 'Artist or Band Name...' %></li>
-    <li class="left" style="margin-left:5px;"><input src="http://0.0.0.0:3000/assets/rock_and_roll_hand.png" type="image" style="padding:0px;"></li>
+    <li class="left" style="margin-left:5px;"><%= image_submit_tag("rock_and_roll_hand.png") %></li>
     <li class="right"><a href="http://songkick.com" target="blank"><img src="http://s25.postimg.org/vxx7n1zcb/songkick_logo.png"></a></li>
 <% end %>
