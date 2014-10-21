@@ -1,17 +1,30 @@
 == README
-This is a production version of my Final Project from The iron Yard Academy
-Ruby on Rails Engineering course, taken the Summer 2014 in Houston, TX. It
-accesses the Songkick.com API to provide location information for upcoming
-concerts around the world and displays that information as a marker on a map,
-provided by GoogleMaps Javascript API v3. The navbar and framework are provided
-by Foundation 5 by Zurb. The markers are clickable to see the date of the
-concert and provide a link to the event page at Soundkick.com.
 
-Future updates are planned to include a user sign up for accessing saved
-searches, increased utilization of songkick.com for registered users,
-implementation of location and directions through GoogleMaps, and improved
-search options.
+<h1>Chartography</h1> v1.0
 
+Yo! You think one of your favorite bands is in concert but you don't know when,
+or where. Yeah I'm that kind of fan too. Well you can use <a href="chartography.herokuapp.com" target="blank">
+Chartography</a> to quickly look up concerts worldwide and plan to see totally
+cool shows at any time, anywhere.
+
+!http://33.media.tumblr.com/b84cb9ce023dd47c095f55537c73d226/tumblr_my9ftscc8I1sivph8o1_500.gif!
+
+This version is built on the premise of my final project for the Houston TX Iron
+Yard Academy, which I attended summer 2014. The biggest difference is it uses Google
+Maps instead of LeafletJS, because, well duh Google Maps rulez mapping.
+
+Sending a special shout out to Jared Mehle and his Ruby Gem
+<a href ="https://github.com/jrmehle/songkickr" target="blank">Songkickr</a> for making it so much
+simpler to use the Songkick API as the warehouse of all the awesome concert information.
+
+Other cool infoz on this site: I used Foundation 5 by zurb for style and framework,
+it uses Postgres as the SQL database bc I hosted it on Heroku, and its totally cool
+and simple to use.
+
+Sometime in the future I plan to add in a users registration and make things faster
+and more convenient when searching.
+
+I've put it under an MIT license so if you want to use it you totally can:
 Copyright (c) <2014> <Eric D. Epperson>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
